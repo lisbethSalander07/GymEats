@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #640D14;
+    --secondary-color: #121212;
+    --third-color: #1E1E1E;
+    --text-color: #F4F2F8;
+    --background: #0F0F0F;
+}
+
+/* FONT */
+.bruno-ace-regular {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* BODY */
+
+.container-fluid {
+    height: 100vh;
+    background-color: var(--background);
+    color: var(--text-color);
+}
+
+
+#form-container {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10vh 10vw;
+    border-radius: 25px;
+    margin-top: 20vh;
+}
+
+
+#form-container h3 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+input{
+    background-color: var(--third-color);
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+}
+
+/* SUBMIT */
+#invio {
+    background-color: var(--primary-color);
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+}
