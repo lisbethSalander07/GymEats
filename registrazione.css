@@ -19,6 +19,7 @@
     height: 100vh;
     background-color: var(--background);
     color: var(--text-color);
+    overflow: auto;
 }
 
 
@@ -29,12 +30,40 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    padding: 5vh 5vw;
     width: fit-content;
-    padding: 10vh 10vw;
     border-radius: 25px;
-    margin-top: 20vh;
+    max-width: 800px;
+    margin: 5vh auto;
 }
 
+.insieme {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.campo-full {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.campo-singolo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 120px;
+}
+
+#campo-data {
+    flex: 2.5;
+}
 
 #form-container h3 {
     color: var(--primary-color);
@@ -45,16 +74,18 @@
 label{
     margin-top: 20px;
     margin-bottom: 5px;
+    margin-left: 5px;
     font-size: 1rem;
 }
 
-input{
+input, select {
     background-color: var(--third-color);
     border-radius: 25px;
     border: none;
     font-size: 1rem;
     padding: 10px 20px;
     color: var(--text-color);
+    width: 100%;
 }
 
 /* SUBMIT */
@@ -67,8 +98,31 @@ input{
     font-size: 1rem;
     padding: 10px 20px;
     color: var(--text-color);
+    width: fit-content;
 }
 
 #invio:hover {
     opacity: 0.9;
+}
+
+/* --- REGOLE PER TELEFONI --- */
+@media (max-width: 600px) {
+    #form-container {
+        padding: 30px 30px;
+        margin-top: 2vh;
+    }
+
+    .insieme {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .campo-singolo {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #form-container h3 {
+        font-size: 1.5rem;
+    }
 }

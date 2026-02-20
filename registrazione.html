@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+
+    <link rel="stylesheet" href="registrazione.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<!-- TO DO:
+-->
+
+<body>
+
+    <!-- container -->
+    <div class="container-fluid bruno-ace-regular">
+        <!-- logo -->
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1 h-1">
+                <img src="immagini/logo.png" alt="logo">
+            </div>
+            <div class="col-10"></div>
+        </div>
+
+
+        <!-- box registrazione -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div id="form-container">
+                    <h3>Crea il tuo account</h3>
+
+                    <form action="" method="post">
+                        <div class="insieme">
+                            <div class="campo-singolo">
+                                <label for="nome">Nome:</label>
+                                <input type="text" name="nome">
+                            </div>
+
+                            <div class="campo-singolo">
+                                <label for="cognome">Cognome:</label>
+                                <input type="text" name="cognome">
+                            </div>
+                        </div>
+
+                        <div class="insieme">
+                            <div class="campo-singolo" id="campo-data">
+                                <label for="data_nascita">Data di nascita:</label>
+                                <input type="date" name="data_nascita">
+                            </div>
+
+                            <div class="campo-singolo">
+                                <label for="peso">Peso:</label>
+                                <input type="text" placeholder="kg" name="peso">
+                            </div>
+
+                            <div class="campo-singolo">
+                                <label for="altezza">Altezza:</label>
+                                <input type="text" placeholder="cm" name="altezza">
+                            </div>
+
+                            <div class="campo-singolo">
+                                <label for="sesso">Sesso:</label>
+                                <select name="sesso">
+                                    <option value="F">F</option>
+                                    <option value="M">M</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="campo-full">
+                            <label for="email">E-mail:</label>
+                            <input type="email" name="email">
+                        </div>
+
+                        <div class="campo-full">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password">
+                        </div>
+
+                        <input type="submit" name="invio" id="invio" value="Registrati">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
