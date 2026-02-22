@@ -13,6 +13,12 @@
     font-style: normal;
 }
 
+/* LOGO */
+.logo-img {
+    height: 48px;
+    width: auto;
+}
+
 /* BODY */
 
 .container-fluid {
@@ -22,107 +28,104 @@
     overflow: auto;
 }
 
+/* FORM */
 
 #form-container {
     background-color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 5vh 5vw;
-    width: fit-content;
     border-radius: 25px;
-    max-width: 800px;
-    margin: 5vh auto;
+    padding: 40px;
 }
 
-.insieme {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
+/* CAMPI */
 
-.campo-full {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.campo-singolo {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 120px;
-}
-
-#campo-data {
-    flex: 2.5;
-}
-
-#form-container h3 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-label{
-    margin-top: 20px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    font-size: 1rem;
-}
-
-input, select {
+input.form-control,
+select.form-select,
+input[type="date"].form-control {
     background-color: var(--third-color);
     border-radius: 25px;
     border: none;
     font-size: 1rem;
     padding: 10px 20px;
     color: var(--text-color);
-    width: 100%;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+    background-color: var(--third-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    border: none;
+    outline: none;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+::placeholder {
+    color: #9E9AAD;
+    opacity: 1;
+}
+
+/* opzioni */
+select.form-select option {
+    background-color: var(--third-color);
+    color: var(--text-color);
+}
+
+/* TITOLO */
+#form-container h3 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    margin-bottom: 20px;
 }
 
 /* SUBMIT */
 #invio {
     background-color: var(--primary-color);
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    font-size: 1rem;
-    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
     color: var(--text-color);
-    width: fit-content;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 1rem;
+    padding: 10px 32px;
+    display: block;
+    margin: 28px auto 0;
 }
 
 #invio:hover {
     opacity: 0.9;
 }
 
-/* --- REGOLE PER TELEFONI --- */
-@media (max-width: 600px) {
+/* LINK LOGIN */
+#login {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+#login span:hover {
+    color: var(--primary-color);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
     #form-container {
-        padding: 30px 30px;
-        margin-top: 2vh;
+        padding: 28px 20px;
     }
 
-    .insieme {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .campo-singolo {
+    #invio {
         width: 100%;
-        margin-bottom: 15px;
-    }
-
-    #form-container h3 {
-        font-size: 1.5rem;
     }
 }

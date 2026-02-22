@@ -13,6 +13,12 @@
     font-style: normal;
 }
 
+/* LOGO */
+.logo-img {
+    height: 48px;
+    width: auto;
+}
+
 /* BODY */
 
 .container-fluid {
@@ -21,34 +27,29 @@
     color: var(--text-color);
 }
 
+/* FORM */
 
 #form-container {
     background-color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    padding: 10vh 10vw;
     border-radius: 25px;
-    margin-top: 20vh;
+    padding: 40px;
 }
-
 
 #form-container h3 {
     color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    margin-bottom: 24px;
+    text-align: center;
 }
 
-label{
-    margin-top: 20px;
-    margin-bottom: 5px;
-    font-size: 1rem;
+label {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    font-size: 0.9rem;
 }
 
-input{
+input.form-control {
     background-color: var(--third-color);
     border-radius: 25px;
     border: none;
@@ -57,18 +58,53 @@ input{
     color: var(--text-color);
 }
 
+input.form-control:focus {
+    background-color: var(--third-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    border: none;
+    outline: none;
+}
+
+
 /* SUBMIT */
 #invio {
     background-color: var(--primary-color);
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    font-size: 1rem;
-    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
     color: var(--text-color);
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 1rem;
+    padding: 10px 32px;
+    display: block;
+    margin: 28px auto 0;
 }
 
 #invio:hover {
     opacity: 0.9;
+}
+
+/* LINK REGISTRAZIONE */
+#registrazione {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+#registrazione span:hover {
+    color: var(--primary-color);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    #form-container {
+        padding: 28px 20px;
+    }
+
+    #invio {
+        width: 100%;
+    }
 }

@@ -26,71 +26,72 @@
     <!-- container -->
     <div class="container-fluid bruno-ace-regular">
         <!-- logo -->
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-1 h-1">
-                <img src="immagini/logo.png" alt="logo">
+        <div class="row mb-2">
+            <div class="col-auto">
+                <img src="immagini/logo.png" alt="logo" class="logo-img">
             </div>
-            <div class="col-10"></div>
         </div>
 
 
         <!-- box registrazione -->
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
                 <div id="form-container">
                     <h3>Crea il tuo account</h3>
 
                     <form action="" method="post">
-                        <div class="insieme">
-                            <div class="campo-singolo">
-                                <label for="nome">Nome:</label>
-                                <input type="text" name="nome">
-                            </div>
 
-                            <div class="campo-singolo">
+                        <div class="row g-2">
+                            <div class="col-12 col-sm-6">
+                                <label for="nome">Nome:</label>
+                                <input type="text" name="nome" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-6">
                                 <label for="cognome">Cognome:</label>
-                                <input type="text" name="cognome">
+                                <input type="text" name="cognome" class="form-control">
                             </div>
                         </div>
 
-                        <div class="insieme">
-                            <div class="campo-singolo" id="campo-data">
+                        <div class="row g-2 mt-0">
+                            <div class="col-12 col-sm-7 col-md-5">
                                 <label for="data_nascita">Data di nascita:</label>
-                                <input type="date" name="data_nascita">
+                                <input type="date" name="data_nascita" class="form-control">
                             </div>
-
-                            <div class="campo-singolo">
+                            <div class="col-6 col-sm-5 col-md-3">
                                 <label for="peso">Peso:</label>
-                                <input type="text" placeholder="kg" name="peso">
+                                <input type="text" placeholder="kg" name="peso" class="form-control">
                             </div>
-
-                            <div class="campo-singolo">
+                            <div class="col-6 col-sm-5 col-md-2">
                                 <label for="altezza">Altezza:</label>
-                                <input type="text" placeholder="cm" name="altezza">
+                                <input type="text"placeholder="cm" name="altezza" class="form-control">
                             </div>
-
-                            <div class="campo-singolo">
+                            <div class="col-6 col-sm-5 col-md-2">
                                 <label for="sesso">Sesso:</label>
-                                <select name="sesso">
+                                <select id="sesso" name="sesso" class="form-select">
                                     <option value="F">F</option>
                                     <option value="M">M</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="campo-full">
-                            <label for="email">E-mail:</label>
-                            <input type="email" name="email">
+                        <div class="row mt-0">
+                            <div class="col-12">
+                                <label for="email">E-mail:</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
                         </div>
 
-                        <div class="campo-full">
-                            <label for="password">Password:</label>
-                            <input type="password" name="password">
+                        <div class="row mt-0">
+                            <div class="col-12">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
                         </div>
 
                         <input type="submit" name="invio" id="invio" value="Registrati">
                     </form>
+
+                    <a href="login.html" id="login">oppure <span>ACCEDI</span></a>
                 </div>
             </div>
         </div>
