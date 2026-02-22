@@ -1,0 +1,328 @@
+:root {
+    --primary: #640D14;
+    --secondary: #121212;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
+    --background: #0F0F0F;
+    --muted: #666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Bruno Ace", sans-serif;
+    min-height: 100vh;
+}
+
+/* ════════════════════════════════════════════
+           NAVBAR
+           "GymEats" + logo in alto a sinistra,
+           3 link pill a destra.
+        ════════════════════════════════════════════ */
+.topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 22px 10px;
+    gap: 10px;
+}
+
+.brand-name {
+    font-size: 0.82rem;
+    color: var(--text);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Cerchio logo rosso con simbolo dentro */
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Link di navigazione */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.82rem;
+    padding: 7px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.nav-links a.active {
+    background-color: var(--primary);
+}
+
+/* ════════════════════════════════════════════
+           CONTENUTO PAGINA
+        ════════════════════════════════════════════ */
+.page {
+    padding: 10px 22px 40px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.data-label {
+    font-size: 0.82rem;
+    margin-bottom: 20px;
+}
+
+/* ════════════════════════════════════════════
+           SELETTORE GIORNI
+           5 card affiancate, scorrevoli su mobile.
+           Quella attiva è rossa.
+        ════════════════════════════════════════════ */
+.giorni-wrap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.giorno {
+    flex: 1;
+    min-width: 62px;
+    background-color: var(--secondary);
+    border-radius: 14px;
+    padding: 18px 8px 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.giorno .num {
+    font-size: 1.55rem;
+    line-height: 1;
+    display: block;
+}
+
+.giorno .nome {
+    font-size: 0.58rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 8px;
+}
+
+.giorno.active {
+    background-color: var(--primary);
+}
+
+.giorno.active .nome {
+    color: var(--text);
+}
+
+/* ════════════════════════════════════════════
+           SEZIONE STATS: Macro | Gauge | Acqua
+        ════════════════════════════════════════════ */
+.stats-area {
+    display: grid;
+    grid-template-columns: 180px 1fr 160px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    padding: 10px 0;
+}
+
+@media (max-width: 580px) {
+    .stats-area {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* ── MACRO ── */
+.macro-titolo {
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+}
+
+.macro-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+.mbar {
+    width: 58px;
+    height: 9px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.mbar-c {
+    background: #6e1018;
+}
+
+.mbar-p {
+    background: #8a1a22;
+}
+
+.mbar-g {
+    background: #a0222c;
+}
+
+/* ── GAUGE ──────────────────────────────────────────────────
+           SVG viewBox="0 0 320 170":
+           Cerchio centro (160,160), raggio 120.
+           Circonferenza = 2 × π × 120 ≈ 754.
+           Metà arco (semi-cerchio superiore) = 754/2 = 377.
+           dashoffset = -754/4 = -188.5 → l'arco parte da sinistra.
+           Riempimento 80% (1600/2000): 377 × 0.80 ≈ 302.
+        ─────────────────────────────────────────────────────────────── */
+.gauge-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gauge-svg-box {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+}
+
+.gauge-svg-box svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Testo sovrapposto al centro-basso del gauge */
+.gauge-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.gauge-text .glabel {
+    font-size: 0.65rem;
+    color: var(--muted);
+    display: block;
+}
+
+.gauge-text .gnum {
+    font-size: 1.9rem;
+    line-height: 1;
+    display: block;
+}
+
+.gauge-minmax {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 260px;
+    font-size: 0.65rem;
+    color: var(--muted);
+    padding: 4px 6px 0;
+}
+
+/* ── ACQUA ── */
+.acqua-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.acqua-titolo {
+    font-size: 0.8rem;
+}
+
+.acqua-num {
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+/* ── BOTTONE + ── */
+.btn-plus {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: none;
+    color: var(--text);
+    font-size: 1.6rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Bruno Ace", sans-serif;
+}
+
+.btn-plus:hover {
+    opacity: 0.85;
+}
+
+/* ════════════════════════════════════════════
+           PASTI
+           Riga: emoji | testo | bottone +
+        ════════════════════════════════════════════ */
+.pasti-titolo {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.pasto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: var(--secondary);
+    border-radius: 14px;
+    padding: 16px 16px;
+    margin-bottom: 10px;
+}
+
+.pasto-emoji {
+    font-size: 1.9rem;
+    line-height: 1;
+    width: 38px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.pasto-testo {
+    flex: 1;
+    font-size: 0.82rem;
+}
+
+.pasto-testo .pnome {
+    color: var(--muted);
+}
