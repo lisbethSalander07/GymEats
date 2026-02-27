@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home nutrizione</title>
 
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="nutrizione.css">
 
     <!-- font -->
@@ -13,152 +15,139 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
-<!-- TO DO -->
 
-<body>
-    <!-- ════════════════════════════════════
-         NAVBAR
-    ════════════════════════════════════ -->
-    <div class="topbar">
-        <div>
-            <span class="brand-name">GymEats</span>
-            <div class="brand-logo">
-                <!-- sostituisci con: <img src="immagini/logo.png" alt="logo"> -->
-                ⚡
+<body class="bruno-ace-regular">
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row align-items-center py-3">
+            <div class="col-auto">
+                <img src="immagini/logo.png" alt="logo" class="logo-img">
+            </div>
+            <div class="col-auto ms-auto">
+                <nav class="d-flex gap-2">
+                    <a href="nutrizione.html" class="nav-pill active">Nutrizione</a>
+                    <a href="allenamento.html" class="nav-pill">Allenamento</a>
+                    <a href="profilo.html" class="nav-pill">Profilo</a>
+                </nav>
             </div>
         </div>
-
-        <nav class="nav-links">
-            <a href="nutrizione.html" class="active">Nutrizione</a>
-            <a href="allenamento.html">Allenamento</a>
-            <a href="profilo.html">Profilo</a>
-        </nav>
     </div>
 
-    <!-- ════════════════════════════════════
-         PAGINA
-    ════════════════════════════════════ -->
+
     <div class="page">
 
         <p class="data-label">16 gennaio 2026</p>
 
-        <!-- ── GIORNI ── -->
-        <div class="giorni-wrap">
+        <!-- GIORNI -->
+        <div class="giorni mb-5">
             <div class="giorno">
-                <span class="num">14</span>
-                <span class="nome">Mercoledì</span>
+                <span class="g-num">14</span>
+                <span class="g-nome">Mercoledì</span>
             </div>
             <div class="giorno">
-                <span class="num">15</span>
-                <span class="nome">Giovedì</span>
+                <span class="g-num">15</span>
+                <span class="g-nome">Giovedì</span>
             </div>
             <div class="giorno active">
-                <span class="num">16</span>
-                <span class="nome">Venerdì</span>
+                <span class="g-num">16</span>
+                <span class="g-nome">Venerdì</span>
             </div>
             <div class="giorno">
-                <span class="num">17</span>
-                <span class="nome">Sabato</span>
+                <span class="g-num">17</span>
+                <span class="g-nome">Sabato</span>
             </div>
             <div class="giorno">
-                <span class="num">18</span>
-                <span class="nome">Domenica</span>
+                <span class="g-num">18</span>
+                <span class="g-nome">Domenica</span>
             </div>
         </div>
 
-        <!-- ── STATS ── -->
-        <div class="stats-area">
 
+        <div class="row align-items-center gy-4 mb-5">
             <!-- Macronutrienti -->
-            <div>
-                <p class="macro-titolo">Macronutrienti:</p>
-                <div class="macro-item">
-                    <div class="mbar mbar-c"></div>
+            <div class="col-12 col-md-3">
+                <p class="mb-3">Macronutrienti:</p>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="mbar"></div>
                     <span>Carboidrati</span>
                 </div>
-                <div class="macro-item">
-                    <div class="mbar mbar-p"></div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="mbar"></div>
                     <span>Proteine</span>
                 </div>
-                <div class="macro-item">
-                    <div class="mbar mbar-g"></div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="mbar"></div>
                     <span>Grassi</span>
                 </div>
             </div>
 
-            <!-- Gauge calorie -->
-            <div class="gauge-wrap">
-                <div class="gauge-svg-box">
-                    <svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Arco di sfondo grigio scuro -->
-                        <circle cx="160" cy="160" r="120" fill="none" stroke="#222222" stroke-width="30"
-                            stroke-dasharray="377 754" stroke-dashoffset="-188.5" stroke-linecap="round" />
-                        <!-- Arco rosso: 80% di 377 = 302 (1600 su 2000) -->
-                        <circle cx="160" cy="160" r="120" fill="none" stroke="#640D14" stroke-width="30"
-                            stroke-dasharray="302 754" stroke-dashoffset="-188.5" stroke-linecap="round" />
+            <!-- CERCHIO CALORIE -->
+            <div class="col-12 col-md-6">
+                <div class="cerchio">
+                    <svg viewBox="0 0 200 200">
+                        <!-- cerchio grigio -->
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="#1E1E1E" stroke-width="18" />
+                        <!-- arco rosso -->
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="#640D14" stroke-width="18" stroke-dasharray="427 534" stroke-linecap="round" />
                     </svg>
-
-                    <div class="gauge-text">
-                        <span class="glabel">Cal mangiate:</span>
-                        <span class="gnum">1600</span>
+                    <div class="centro">
+                        <span class="kcal">1600</span>
+                        <span class="totale">/ 2000 Kcal</span>
                     </div>
                 </div>
-
-                <div class="gauge-minmax">
-                    <span>0</span>
-                    <span>2000</span>
-                </div>
             </div>
+
 
             <!-- Acqua -->
-            <div class="acqua-wrap">
-                <p class="acqua-titolo">Acqua bevuta:</p>
-                <div class="acqua-num">1.5 l</div>
-                <button class="btn-plus">+</button>
+            <div class="col-12 col-md-3 text-center">
+                <p class="mb-2">Acqua bevuta:</p>
+                <p class="mb-3">1.5 l</p>
+                <button class="btn-plus mx-auto">+</button>
             </div>
-
         </div>
 
-        <!-- ── PASTI ── -->
-        <p class="pasti-titolo">Pasti</p>
 
-        <div class="pasto">
+
+        <!-- PASTI -->
+        <p class="mb-3">Pasti</p>
+
+        <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">☕</span>
-            <div class="pasto-testo">
-                <span class="pnome">Colazione:</span>&nbsp; 200 / 400 Kcal
-            </div>
+            <span class="flex-grow-1">
+                <span>Colazione:</span>&nbsp; 200 / 400 Kcal
+            </span>
             <button class="btn-plus">+</button>
         </div>
 
-        <div class="pasto">
+        <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🍝</span>
-            <div class="pasto-testo">
-                <span class="pnome">Pranzo:</span>&nbsp; 500 / 700 Kcal
-            </div>
+            <span class="flex-grow-1">
+                <span>Pranzo:</span>&nbsp; 500 / 700 Kcal
+            </span>
             <button class="btn-plus">+</button>
         </div>
 
-        <div class="pasto">
+        <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🥪</span>
-            <div class="pasto-testo">
-                <span class="pnome">Cena:</span>&nbsp; 200 / 700 Kcal
-            </div>
+            <span class="flex-grow-1">
+                <span>Cena:</span>&nbsp; 200 / 700 Kcal
+            </span>
             <button class="btn-plus">+</button>
         </div>
 
-        <div class="pasto">
+        <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🍎</span>
-            <div class="pasto-testo">
-                <span class="pnome">Snack:</span>&nbsp; 700 / 200 Kcal
-            </div>
+            <span class="flex-grow-1" style="font-size:.85rem">
+                <span>Snack:</span>&nbsp; 700 / 200 Kcal
+            </span>
             <button class="btn-plus">+</button>
         </div>
 
-    </div>
+    </div><!-- fine .page -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
