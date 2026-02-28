@@ -18,13 +18,16 @@
 
 </head>
 
+<!-- TO DO:
+- sistemare carosello
+-->
+
 
 <body class="bruno-ace-regular">
-    <div class="container-fluid">
-        <!-- header -->
+    <!-- <div class="container-fluid">
         <div class="row align-items-center py-3">
             <div class="col-auto">
-                <img src="immagini/logo.png" alt="logo" class="logo-img">
+                <img src="GymEats-logo.png" alt="logo" class="logo-img">
             </div>
             <div class="col-auto ms-auto">
                 <nav class="d-flex gap-2">
@@ -34,7 +37,31 @@
                 </nav>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <nav class="navbar-desktop d-none d-md-flex">
+        <img src="GymEats-logo.png" alt="logo" class="logo-img">
+        <div class="d-flex gap-2">
+            <a href="nutrizione.html"  class="nav-pill active">Nutrizione</a>
+            <a href="allenamento.html" class="nav-pill">Allenamento</a>
+            <a href="profilo.html"     class="nav-pill">Profilo</a>
+        </div>
+    </nav>
+
+    <nav class="navbar-mobile d-flex d-md-none">
+        <a href="nutrizione.html" class="tab-item active">
+            <span class="tab-icon">🥗</span>
+            <span class="tab-label">Nutrizione</span>
+        </a>
+        <a href="allenamento.html" class="tab-item">
+            <span class="tab-icon">🏋️</span>
+            <span class="tab-label">Allenamento</span>
+        </a>
+        <a href="profilo.html" class="tab-item">
+            <span class="tab-icon">👤</span>
+            <span class="tab-label">Profilo</span>
+        </a>
+    </nav>
 
 
     <div class="page">
@@ -44,54 +71,98 @@
         <!-- GIORNI -->
         <div class="giorni mb-5">
             <div class="giorno">
-                <span class="g-num">14</span>
+                <span class="g-num">10</span>
+                <span class="g-nome">Lunedì</span>
+            </div>
+            <div class="giorno">
+                <span class="g-num">11</span>
+                <span class="g-nome">Martedì</span>
+            </div>
+            <div class="giorno">
+                <span class="g-num">12</span>
                 <span class="g-nome">Mercoledì</span>
             </div>
             <div class="giorno">
-                <span class="g-num">15</span>
+                <span class="g-num">13</span>
                 <span class="g-nome">Giovedì</span>
             </div>
-            <div class="giorno active">
-                <span class="g-num">16</span>
+            <div class="giorno">
+                <span class="g-num">14</span>
                 <span class="g-nome">Venerdì</span>
             </div>
             <div class="giorno">
-                <span class="g-num">17</span>
+                <span class="g-num">15</span>
                 <span class="g-nome">Sabato</span>
+            </div>
+            <div class="giorno active">
+                <span class="g-num">16</span>
+                <span class="g-nome">Domenica</span>
+            </div>
+            <div class="giorno">
+                <span class="g-num">17</span>
+                <span class="g-nome">Lunedì</span>
             </div>
             <div class="giorno">
                 <span class="g-num">18</span>
-                <span class="g-nome">Domenica</span>
+                <span class="g-nome">Martedì</span>
+            </div>
+            <div class="giorno">
+                <span class="g-num">19</span>
+                <span class="g-nome">Mercoledì</span>
+            </div>
+            <div class="giorno">
+                <span class="g-num">20</span>
+                <span class="g-nome">Giovedì</span>
             </div>
         </div>
 
 
         <div class="row align-items-center gy-4 mb-5">
-            <!-- Macronutrienti -->
+            <!-- MACROS -->
             <div class="col-12 col-md-3">
-                <p class="mb-3">Macronutrienti:</p>
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <div class="mbar"></div>
-                    <span>Carboidrati</span>
+                <p class="mb-3 sezione-titolo">Macronutrienti:</p>
+
+                <div class="macro-item">
+                    <div class="macro-labels">
+                        <span>Carboidrati</span>
+                        <span class="macro-num">180 / 250 g</span>
+                    </div>
+                    <div class="macro-track">
+                        <div class="macro-fill" id="carbo"></div>
+                    </div>
                 </div>
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <div class="mbar"></div>
-                    <span>Proteine</span>
+
+                <div class="macro-item">
+                    <div class="macro-labels">
+                        <span>Proteine</span>
+                        <span class="macro-num">95 / 150 g</span>
+                    </div>
+                    <div class="macro-track">
+                        <div class="macro-fill" id="proteine"></div>
+                    </div>
                 </div>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="mbar"></div>
-                    <span>Grassi</span>
+
+                <div class="macro-item">
+                    <div class="macro-labels">
+                        <span>Grassi</span>
+                        <span class="macro-num">40 / 70 g</span>
+                    </div>
+                    <div class="macro-track">
+                        <div class="macro-fill" id="grassi"></div>
+                    </div>
                 </div>
             </div>
+
 
             <!-- CERCHIO CALORIE -->
             <div class="col-12 col-md-6">
                 <div class="cerchio">
                     <svg viewBox="0 0 200 200">
                         <!-- cerchio grigio -->
-                        <circle cx="100" cy="100" r="85" fill="none" stroke="#1E1E1E" stroke-width="18" />
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#1E1E1E" stroke-width="18" />
                         <!-- arco rosso -->
-                        <circle cx="100" cy="100" r="85" fill="none" stroke="#640D14" stroke-width="18" stroke-dasharray="427 534" stroke-linecap="round" />
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#640D14" stroke-width="18"
+                            stroke-dasharray="427 534" stroke-linecap="round" />
                     </svg>
                     <div class="centro">
                         <span class="kcal">1600</span>
@@ -100,13 +171,13 @@
                 </div>
             </div>
 
-
-            <!-- Acqua -->
+            <!-- ACQUA -->
             <div class="col-12 col-md-3 text-center">
                 <p class="mb-2">Acqua bevuta:</p>
                 <p class="mb-3">1.5 l</p>
                 <button class="btn-plus mx-auto">+</button>
             </div>
+
         </div>
 
 
@@ -117,7 +188,7 @@
         <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">☕</span>
             <span class="flex-grow-1">
-                <span>Colazione:</span>&nbsp; 200 / 400 Kcal
+                Colazione:&nbsp;<span class="small">200 / 400 Kcal</span>
             </span>
             <button class="btn-plus">+</button>
         </div>
@@ -125,7 +196,7 @@
         <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🍝</span>
             <span class="flex-grow-1">
-                <span>Pranzo:</span>&nbsp; 500 / 700 Kcal
+                Pranzo:&nbsp;<span class="small">500 / 700 Kcal</span>
             </span>
             <button class="btn-plus">+</button>
         </div>
@@ -133,15 +204,15 @@
         <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🥪</span>
             <span class="flex-grow-1">
-                <span>Cena:</span>&nbsp; 200 / 700 Kcal
+                Cena:&nbsp;<span class="small">200 / 700 Kcal</span>
             </span>
             <button class="btn-plus">+</button>
         </div>
 
         <div class="pasto d-flex align-items-center gap-3">
             <span class="pasto-emoji">🍎</span>
-            <span class="flex-grow-1" style="font-size:.85rem">
-                <span>Snack:</span>&nbsp; 700 / 200 Kcal
+            <span class="flex-grow-1">
+                Snack:&nbsp;<span class="small">700 / 200 Kcal</span>
             </span>
             <button class="btn-plus">+</button>
         </div>
