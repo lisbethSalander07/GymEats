@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymEats - Profilo</title>
 
+    <!-- Google Font Bruno Ace -->
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Personalizzato -->
+    <link rel="stylesheet" href="profilo.css">
+</head>
+<body class="bruno-ace-regular">
+
+    <!-- NAVBAR -->
+    <nav class="container-fluid py-3 px-5 d-flex justify-content-between align-items-center">
+        <img src="GymEats-logo.png" class="logo-img" alt="Logo">
+
+        <div class="d-flex gap-3">
+            <a href="#" class="nav-pill">Nutrizione</a>
+            <a href="#" class="nav-pill">Allenamento</a>
+            <a href="#" class="nav-pill active">Profilo</a>
+        </div>
+    </nav>
+
+    <!-- CONTENUTO PROFILO -->
+    <div class="container profile-wrapper">
+
+        <h3 class="section-title mb-5">Il tuo profilo</h3>
+
+        <!-- HEADER PROFILO -->
+        <div class="profile-header">
+            <div class="avatar"></div>
+            <div>
+                <h4 class="mb-1">Nome</h4>
+                <h5 class="text-secondary">Cognome</h5>
+            </div>
+        </div>
+
+        <hr class="profile-divider">
+
+        <div class="row mt-4">
+
+            <!-- DATI -->
+            <div class="col-lg-8">
+
+                <div class="profile-row">
+                    <div class="profile-label">Nome:</div>
+                    <input type="text" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+                <div class="profile-row">
+                    <div class="profile-label">Cognome:</div>
+                    <input type="text" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+                <div class="profile-row">
+                    <div class="profile-label">Sesso:</div>
+                    <input type="text" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+                <div class="profile-row">
+                    <div class="profile-label">Peso:</div>
+                    <input type="text" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+                <div class="profile-row">
+                    <div class="profile-label">Altezza:</div>
+                    <input type="text" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+                <div class="profile-row">
+                    <div class="profile-label">Anno di nascita:</div>
+                    <input type="date" class="profile-input">
+                    <div class="edit-icon">✎</div>
+                </div>
+
+            </div>
+
+            <!-- AZIONI -->
+            <div class="col-lg-4 profile-actions">
+                <button class="profile-btn">Modifica email</button>
+                <button class="profile-btn">Modifica password</button>
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+<!-- CALENDARIO ALLENAMENTI -->
+<!-- ========================= -->
+
+<h3 class="section-title mt-5 mb-4">Il mio calendario degli allenamenti</h3>
+
+<div class="calendar-card mb-5">
+
+    <div class="calendar-header">Mese Anno</div>
+
+    <div class="calendar-grid">
+        <div></div><div></div><div class="day active-green">3</div>
+        <div class="day active-green">4</div><div class="day">5</div>
+        <div class="day">6</div><div class="day">7</div>
+
+        <div class="day active-green">8</div>
+        <div class="day active-green">9</div>
+        <div class="day">10</div>
+        <div class="day">11</div>
+        <div class="day">12</div>
+        <div class="day">13</div>
+        <div class="day">14</div>
+
+        <div class="day">15</div>
+        <div class="day">16</div>
+        <div class="day">17</div>
+        <div class="day">18</div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+
+        <div class="day">22</div>
+        <div class="day">23</div>
+        <div class="day">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+        <div class="day">28</div>
+
+        <div class="day">29</div>
+        <div class="day">30</div>
+        <div class="day active-green">31</div>
+    </div>
+
+    <div class="calendar-footer">Mese Anno</div>
+</div>
+
+
+<!-- ========================= -->
+<!-- CALENDARIO ALIMENTARE -->
+<!-- ========================= -->
+
+<h3 class="section-title mb-4">Il mio calendario alimentare</h3>
+
+<div class="calendar-card mb-5">
+
+    <div class="calendar-header">Mese Anno</div>
+
+    <div class="calendar-grid">
+        <div class="day active-green">1</div>
+        <div class="day active-orange">2</div>
+        <div class="day active-green">3</div>
+        <div class="day active-green">4</div>
+        <div class="day active-red">5</div>
+        <div class="day active-orange">6</div>
+        <div class="day active-red">7</div>
+
+        <div class="day active-green">8</div>
+        <div class="day active-green">9</div>
+        <div class="day">10</div>
+        <div class="day">11</div>
+        <div class="day">12</div>
+        <div class="day">13</div>
+        <div class="day">14</div>
+
+        <div class="day">15</div>
+        <div class="day">16</div>
+        <div class="day">17</div>
+        <div class="day">18</div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+
+        <div class="day">22</div>
+        <div class="day">23</div>
+        <div class="day">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+        <div class="day">28</div>
+
+        <div class="day">29</div>
+        <div class="day">30</div>
+        <div class="day">31</div>
+    </div>
+
+    <div class="calendar-footer">Mese Anno</div>
+</div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
