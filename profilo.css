@@ -127,7 +127,8 @@ html {
 .edit-icon {
     margin-left: 12px;
     cursor: pointer;
-    color: #777;
+    color: var( --text);
+    background-color: var(--background);
     transition: 0.2s ease;
 }
 
@@ -196,6 +197,7 @@ html {
     border-radius: 18px;
     padding: 30px 35px;
     max-width: 750px;
+    margin: 0 auto;
 }
 
 .calendar-header,
@@ -230,7 +232,7 @@ html {
     color: var(--text);
 }
 
-/* Stati */
+/* Stati
 .active-green {
     background-color: #22c55e;
     color: white;
@@ -244,7 +246,7 @@ html {
 .active-orange {
     background-color: #f97316;
     color: white;
-}
+}*/
 
 /* Responsive */
 @media (max-width: 768px) {
