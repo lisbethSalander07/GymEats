@@ -83,12 +83,12 @@ html {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background-color: #CFCFCF;
+    background-color: var(--third);
 }
 
 /* Divider */
 .profile-divider {
-    height: 1px;
+    height: 3px;
     background-color: #2A2A2A;
     border: none;
     margin-bottom: 45px;
@@ -104,7 +104,7 @@ html {
 .profile-label {
     width: 200px;
     font-size: 0.9rem;
-    color: #cfcfcf;
+    color: var(--text);
 }
 
 .profile-input {
