@@ -1,0 +1,124 @@
+:root {
+    --text-muted: #888;
+    --primary: #640D14;
+    --secondary: #121212;
+    --secondary-shade: #38040E;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
+    --background: #0F0F0F;
+}
+
+/* FONT */
+.bruno-ace-regular {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Cerchio in alto a sinistra */
+.step-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+/* Barra di ricerca */
+.search-wrapper {
+    background-color: #161616;
+    border: 1px solid #38040E; /* Bordo rosso scuro */
+    border-radius: 30px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.search-icon {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.search-input-container {
+    height: 100%;
+    width: 100%;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    outline: none;
+    flex-grow: 1;
+    font-size: 1.1rem;
+}
+
+/* Card singolo alimento */
+.food-item-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.food-item-card:hover {
+    background-color: #222;
+}
+
+.food-item-card h5 {
+    font-size: 1.1rem;
+}
+
+/* Bottone di aggiunta '+' */
+.btn-add {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4a090e; /* Rosso scuro per lo sfondo */
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.small-kcal {
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+/* Bottone 'Fine' in basso */
+.btn-fine {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 60px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-fine:hover {
+    background-color: #8b111a;
+}

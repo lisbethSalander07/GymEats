@@ -4,213 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home nutrizione</title>
-
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="nutrizione.css">
-
+    <title>home nutrizione</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
-
-
     <!-- icone -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=exercise,person,restaurant" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="nutrizione.css">
 </head>
 
-<!-- TO DO:
-- sistemare carosello - script
+<!-- 
+- non è responsive
+- bisogna integrare il calendario per la data selezionata
+- mettere delle ombre (+ tridimensionalità alle card dei macros e dei pasti)
 -->
 
+<body>
 
-<body class="bruno-ace-regular">
+    <div class="container-fluid bruno-ace-regular">
+        <div class="row min-vh-100">
 
-    <aside>
-        <h1>GymEats</h1>
-        <div>
-            <a href="nutrizione.html" class="active">Nutrizione</a>
-            <a href="allenamento.html">Allenamento</a>
-            <a href="profilo.html">Profilo</a>
-        </div>
-    </aside>
+            <!-- NAV BAR -->
+            <nav class="col-md-2 d-none d-md-block sidebar py-4">
+                <div class="sidebar-sticky">
+                    <h2 class="logo px-3 mb-5">Gym<span>Eats</span></h2>
 
-    <!-- <nav class="navbar-desktop d-none d-md-flex">
-        <img src="GymEats-logo.png" alt="logo" class="logo-img">
-        <div class="d-flex gap-2">
-            <a href="nutrizione.html" class="nav-pill active">Nutrizione</a>
-            <a href="allenamento.html" class="nav-pill">Allenamento</a>
-            <a href="profilo.html" class="nav-pill">Profilo</a>
-        </div>
-    </nav>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="profilo.html"><i class="fa-solid fa-user"></i> Profilo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nuova_scheda.html"><i class="fa-solid fa-dumbbell"></i>
+                                Allenamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="nutrizione.html"><i class="fa-solid fa-utensils"></i>
+                                Nutrizione</a>
+                        </li>
+                    </ul>
 
-    <nav class="navbar-mobile d-flex d-md-none">
-        <a href="nutrizione.html" class="tab-item active">
-            <span class="material-symbols-outlined">restaurant</span>
-            <span class="tab-label">Nutrizione</span>
-        </a>
-        <a href="allenamento.html" class="tab-item">
-            <span class="material-symbols-outlined">exercise</span>
-            <span class="tab-label">Allenamento</span>
-        </a>
-        <a href="profilo.html" class="tab-item">
-            <span class="material-symbols-outlined">person</span>
-            <span class="tab-label">Profilo</span>
-        </a>
-    </nav> -->
-
-
-    <div class="page">
-
-        <p class="data-label mt-2">16 gennaio 2026</p>
-
-        <!-- GIORNI -->
-        <div class="giorni mb-5" id="carosello">
-        </div>
-
-
-        <div class="row align-items-center gy-4 mb-5">
-            <!-- MACROS -->
-            <div class="col-12 col-md-3">
-                <p class="mb-3 sezione-titolo">Macronutrienti:</p>
-
-                <div class="macro-item">
-                    <div class="macro-labels">
-                        <span>Carboidrati</span>
-                        <span class="macro-num">180 / 250 g</span>
-                    </div>
-                    <div class="macro-track">
-                        <div class="macro-fill" id="carbo"></div>
+                    <!-- LOG OUT -->
+                    <div class="mt-auto logout-container">
+                        <a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                     </div>
                 </div>
+            </nav>
 
-                <div class="macro-item">
-                    <div class="macro-labels">
-                        <span>Proteine</span>
-                        <span class="macro-num">95 / 150 g</span>
+            <main class="col-md-10 ms-sm-auto px-md-5 py-4 main-container">
+                <div class="dashboard-card p-4">
+
+                    <!-- DATA -->
+                    <div class="d-flex align-items-center mb-5 ml-5 date-selector">
+                        <button class="btn btn-link text-white"><i class="fa-solid fa-chevron-left"></i></button>
+                        <h4 class="mb-0 mx-3">Oggi, 31 Marzo</h4>
+                        <button class="btn btn-link text-white"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
-                    <div class="macro-track">
-                        <div class="macro-fill" id="proteine"></div>
+
+
+                    <div class="row align-items-center">
+                        <!-- CERCHIO CAL -->
+                        <div class="col-lg-4 d-flex justify-content-center">
+                            <div class="progress-circle">
+                                <div class="progress-content text-center">
+                                    <h3>450</h3>
+                                    <p>/ 1736 <br> <span>kcal rimaste</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MACROS -->
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="macro-card bordo">
+                                        <i class="fa-solid fa-drumstick-bite mb-3 icona"></i>
+                                        <h6>Proteine</h6>
+                                        <div class="mini-progress">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span class="fw-bold">20 / 100 g</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="macro-card bordo">
+                                        <i class="fa-solid fa-wheat-awn mb-3 icona"></i>
+                                        <h6>Carboidrati</h6>
+                                        <div class="mini-progress">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span class="fw-bold">15 / 200 g</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="macro-card bordo">
+                                        <i class="fa-solid fa-droplet mb-3 icona"></i>
+                                        <h6>Grassi</h6>
+                                        <div class="mini-progress">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span class="fw-bold">10 / 100 g</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- PASTI -->
+                    <div class="mt-5">
+                        <h4 class="mb-4">I tuoi Pasti</h4>
+                        <div class="row g-3">
+                            <div class="col-6 col-md-3">
+                                <div class="meal-card text-center p-3">
+                                    <i class="fa-solid fa-coffee mb-2 icona"></i>
+                                    <h6 class="small fw-bold">Colazione</h6>
+                                    <p class="mb-1">0 kcal</p>
+                                    <div class="add-meal">+</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="meal-card text-center p-3">
+                                    <i class="fa-solid fa-utensils mb-2"></i>
+                                    <h6 class="small fw-bold">Pranzo</h6>
+                                    <p class="mb-1">0 kcal</p>
+                                    <div class="add-meal">+</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="meal-card text-center p-3">
+                                    <i class="fa-solid fa-utensils mb-2"></i>
+                                    <h6 class="small fw-bold">Cena</h6>
+                                    <p class="mb-1">0 kcal</p>
+                                    <div class="add-meal">+</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="meal-card text-center p-3">
+                                    <i class="fa-solid fa-apple-whole mb-2"></i>
+                                    <h6 class="small fw-bold">Spuntini</h6>
+                                    <p class="mb-1">0 kcal</p>
+                                    <div class="add-meal">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div class="macro-item">
-                    <div class="macro-labels">
-                        <span>Grassi</span>
-                        <span class="macro-num">40 / 70 g</span>
-                    </div>
-                    <div class="macro-track">
-                        <div class="macro-fill" id="grassi"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- CERCHIO CALORIE -->
-            <div class="col-12 col-md-6">
-                <div class="cerchio">
-                    <svg viewBox="0 0 200 200">
-                        <!-- cerchio grigio -->
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#1E1E1E" stroke-width="18" />
-                        <!-- arco rosso -->
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#640D14" stroke-width="18"
-                            stroke-dasharray="427 534" stroke-linecap="round" />
-                    </svg>
-                    <div class="centro">
-                        <span class="kcal">1600</span>
-                        <span class="totale">/ 2000 Kcal</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ACQUA -->
-            <div class="col-12 col-md-3 text-center">
-                <p class="mb-2">Acqua bevuta:</p>
-                <p class="mb-3">1.5 l</p>
-                <button class="btn-plus mx-auto">+</button>
-            </div>
-
+            </main>
         </div>
+    </div>
 
-
-
-        <!-- PASTI -->
-        <p class="mb-3">Pasti</p>
-
-        <div class="pasto d-flex align-items-center gap-3">
-            <span class="pasto-emoji">☕</span>
-            <span class="flex-grow-1">
-                Colazione:&nbsp;<span class="small">200 / 400 Kcal</span>
-            </span>
-            <button class="btn-plus">+</button>
-        </div>
-
-        <div class="pasto d-flex align-items-center gap-3">
-            <span class="pasto-emoji">🍝</span>
-            <span class="flex-grow-1">
-                Pranzo:&nbsp;<span class="small">500 / 700 Kcal</span>
-            </span>
-            <button class="btn-plus">+</button>
-        </div>
-
-        <div class="pasto d-flex align-items-center gap-3">
-            <span class="pasto-emoji">🥪</span>
-            <span class="flex-grow-1">
-                Cena:&nbsp;<span class="small">200 / 700 Kcal</span>
-            </span>
-            <button class="btn-plus">+</button>
-        </div>
-
-        <div class="pasto d-flex align-items-center gap-3 mb-4">
-            <span class="pasto-emoji">🍎</span>
-            <span class="flex-grow-1">
-                Snack:&nbsp;<span class="small">700 / 200 Kcal</span>
-            </span>
-            <button class="btn-plus">+</button>
-        </div>
-
-    </div><!-- fine .page -->
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <!-- SCRIPT  -->
-
-    <script>
-        const GIORNI = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
-        const oggi = new Date();
-
-        for (var i = -15; i <= 15; i++) {
-            const d = new Date(oggi);
-            d.setDate(oggi.getDate() + i);
-
-            const div = $('<div>')
-                .addClass('giorno' + (i === 0 ? ' active oggi' : ''))
-                .html(`<span class="g-num">${d.getDate()}</span>
-               <span class="g-nome">${GIORNI[d.getDay()]}</span>`)
-                .on('click', function () {
-                    $('.giorno').removeClass('active');
-                    $(this).addClass('active');
-
-                    // Scrolla verso il giorno cliccato
-                    const carosello = $('#carosello')[0];
-                    carosello.scrollLeft = this.offsetLeft - (carosello.clientWidth / 2) + (this.clientWidth / 2);
-                });
-
-            $('#carosello').append(div);
-        }
-
-        // centra il giorno di oggi
-        setTimeout(function () {
-            const carosello = $('#carosello')[0];
-            const oggiEl = $('.giorno.oggi')[0];
-            carosello.scrollLeft = oggiEl.offsetLeft - (carosello.clientWidth / 2) + (oggiEl.clientWidth / 2);
-        }, 100);
-    </script>
 </body>
 
 </html>

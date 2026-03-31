@@ -1,4 +1,5 @@
 :root {
+    --text-muted: #888;
     --primary: #640D14;
     --secondary: #121212;
     --secondary-shade: #38040E;
@@ -14,294 +15,184 @@
     font-style: normal;
 }
 
-/* BODY */
-body,
-html {
-    background-color: var(--background);
-    color: var(--text);
-    min-height: 100vh;
-}
-
-.container-fluid {
+body {
     background-color: var(--background);
     color: var(--text);
 }
 
-/* LOGO */
-.logo-img {
-    height: 80px;
-    width: auto;
-}
-
-/* HEADER */
-
-/* desktop */
-.navbar-desktop {
-    background-color: var(--background);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 24px;
-}
-
-.logo-img {
-    height: 60px;
-    width: auto;
-}
-
-.nav-pill {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.85rem;
-    padding: 7px 18px;
-    border-radius: 25px;
-    white-space: nowrap;
-}
-
-.nav-pill.active {
-    background-color: var(--primary);
-}
-
-/* telefono */
-.navbar-mobile {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    border-top-left-radius: 25px;
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
     border-top-right-radius: 25px;
-    background-color: var(--third);
-    padding-bottom: env(safe-area-inset-bottom, 8px);   /* Safe area iPhone (notch / home indicator) */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
 }
 
-.tab-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 0;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.65rem;
-    gap: 3px;
-    position: relative;
+.logo {
+    font-weight: 700;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-.tab-label {
-    font-size: 0.58rem;
-}
-
-.tab-item.active {
+.logo span {
     color: var(--primary);
 }
 
-.tab-item.active::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25%;
-    right: 25%;
-    height: 2px;
-    background-color: var(--primary);
-    border-radius: 0 0 2px 2px;
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-right: 3px solid transparent;
 }
 
-.tab-item:not(.active):hover {
+.nav-link:hover {
     color: var(--text);
 }
 
-
-/* GIORNI */
-.giorni {
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
 }
 
-.giorni::-webkit-scrollbar {
-    display: none;
+.nav-link i {
+    margin-right: 10px;
 }
 
-.giorno {
-    flex-shrink: 0;
-    width: 70px;
-    background-color: var(--third);
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-card {
+    background-color: #1a1a1a;
     border-radius: 25px;
-    padding: 25px 5px;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.giorno.active {
-    background-color: var(--primary);
-}
-
-.g-num {
-
-    font-size: 2rem;
-    line-height: 1;
-}
-
-.g-nome {
-    font-size: 0.8rem;
-    margin-top: 6px;
-}
-
-.data-label {
-    font-size: 0.82rem;
-    margin-bottom: 16px;
-}
-
-.oggi{
-    background-color: var(--secondary-shade);
-}
-
-
-
-/* PAGE */
-.page {
-    padding: 6px 20px 50px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-
-/* BARRE MACRO */
-.macro-item {
-    margin-bottom: 14px;
-}
-
-.macro-labels {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 5px;
-    font-size: 0.75rem;
-}
-
-.macro-num {
-    font-size: 0.65rem;
-}
-
-.macro-track {
-    width: 100%;
-    height: 8px;
-    background-color: var(--third);
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.macro-fill {
-    height: 100%;
-    background-color: var(--primary);
-    border-radius: 99px;
-}
-
-/* dimensioni barre */
-#grassi {
-    width: 57%;
-}
-
-#proteine {
-    width: 63%;
-}
-
-#carbo {
-    width: 72%;
-}
-
-
-/* CERCHIO CALORIE */
-.cerchio {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto;
-}
-
-.cerchio svg {
-    width: 100%;
-    height: 100%;
-    transform: rotate(-360deg);
-    /* fa partire l'arco dall'alto */
-}
-
-.centro {
-    position: absolute;
-    inset: 0;
-    /* top:0 right:0 bottom:0 left:0 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.kcal {
-    font-size: 2rem;
-    line-height: 1;
-}
-
-.totale {
-    font-size: 0.65rem;
-    margin-top: 4px;
-}
-
-/* BOTTONE + */
-.btn-plus {
-    width: 38px;
-    height: 38px;
+/* CERCHIO CAL */
+.progress-circle {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    background-color: var(--primary);
-    border: none;
-    color: var(--text);
-    font-size: 1.5rem;
+    background: conic-gradient(var(--primary) 240deg, #333 0deg);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 20px var(--primary);
 }
 
-.btn-plus:hover {
-    opacity: 0.85;
+.progress-circle::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #1a1a1a;
+    border-radius: 50%;
 }
+
+.progress-content {
+    position: relative;
+    z-index: 1;
+}
+
+.progress-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.progress-content p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* MACRO */
+.macro-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+.macro-card.bordo {
+    border-bottom: 4px solid #7b0a14;
+}
+
+.icona {
+    font-size: 1.5rem;
+    color: #7b0a14 ;
+}
+
+.mini-progress {
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    margin: 10px 0;
+}
+
 
 /* PASTI */
-.pasto {
-    background-color: var(--third);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
+.meal-card {
+    background: #222;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
 }
 
-.pasto-emoji {
+.meal-card:hover {
+    background: #282828;
+}
+
+.meal-card i {
+    font-size: 1.5rem;
+    color: #7b0a14;
+}
+
+.add-meal {
+    color: var(--text);
     font-size: 1.8rem;
-    width: 36px;
-    text-align: center;
-    flex-shrink: 0;
+    cursor: pointer;
+    border-top: 1px dashed #444;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
-.small {
-    font-size: 0.75rem;
+
+/* VISUALIZZAZIONE SU SMARTPHONE */
+@media (max-width: 767.98px) {
+    .sidebar {
+        background-color: var(--third);
+        width: 280px;
+    }
+    .main-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .progress-circle {
+        width: 180px;
+        height: 180px;
+    }
+    .progress-circle::after {
+        width: 150px;
+        height: 150px;
+    }
+    .progress-content h3 {
+        font-size: 1.8rem;
+    }
+    .macro-card {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
 }
