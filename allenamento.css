@@ -1,0 +1,185 @@
+:root {
+    --text-muted: #888;
+    --primary: #640D14;
+    --secondary: #121212;
+    --secondary-shade: #38040E;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
+    --background: #0F0F0F;
+}
+
+/* FONT */
+.bruno-ace-regular {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-right: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-card {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Titolo pill */
+        .section-title {
+            background: var(--primary);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        /* Bottoni azione */
+        .action-btn {
+            background-color: #222;
+            border: none;
+            color: var(--text);
+            padding: 16px 28px;
+            border-radius: 18px;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.25s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .action-btn i {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .action-btn:hover {
+            background-color: var(--primary);
+            color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(100, 13, 20, 0.4);
+        }
+
+        .action-btn:hover i {
+            color: var(--text);
+        }
+
+        /* Sottotitolo sezione */
+        .section-label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Card scheda */
+        .scheda-card {
+            background: #1e1e1e;
+            border-radius: 18px;
+            padding: 22px 26px;
+            border-left: 4px solid var(--primary);
+            transition: 0.25s ease;
+        }
+
+        .scheda-card:hover {
+            background: #242424;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(100, 13, 20, 0.3);
+        }
+
+        .scheda-card h5 {
+            margin: 0 0 6px 0;
+            font-size: 1rem;
+        }
+
+        .scheda-card p {
+            color: #888;
+            font-size: 0.78rem;
+            margin: 0 0 16px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Bottone Avvia */
+        .avvia-btn {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 9px 0;
+            border-radius: 12px;
+            width: 100%;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .avvia-btn:hover {
+            background-color: #a31621;
+        }
+
+        /* Link statistiche */
+        .stats-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stats-link:hover {
+            color: #a31621;
+            gap: 12px;
+        }
