@@ -1,10 +1,11 @@
 :root {
+    --text-muted: #888;
     --primary: #640D14;
     --secondary: #121212;
+    --secondary-shade: #38040E;
     --third: #1E1E1E;
     --text: #F4F2F8;
     --background: #0F0F0F;
-    --hover: #a31621;
 }
 
 /* FONT */
@@ -14,98 +15,117 @@
     font-style: normal;
 }
 
-/* BODY */
-body,
-html {
-    background-color: var(--background);
-    color: var(--text);
-    min-height: 100vh;
-
-}
-
-.container-fluid {
+body {
     background-color: var(--background);
     color: var(--text);
 }
 
-/* LOGO */
-.logo-img {
-    height: 100px;
-    width: auto;
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
 }
 
-/* HEADER NAV */
-.nav-pill {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.85rem;
-    padding: 7px 18px;
-    border-radius: 25px;
-    white-space: nowrap;
-    transition: 0.25s ease;
+.logo {
+    font-weight: 700;
 }
 
-.nav-pill:hover {
-    background-color: var(--third);
+.logo span {
+    color: var(--primary);
 }
 
-.nav-pill.active {
-    background-color: var(--primary);
-}
-
-/* Titolo */
-.section-title {
-    color: var(--text);
-    background: var(--primary);
-    display: inline-block;
-    padding: 10px 28px;
-    border-radius: 30px;
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
     font-size: 1rem;
+    border-right: 3px solid transparent;
 }
 
-/* CARD */
-.card-custom{
-    background-color:var(--primary);
-    border:none;
-    border-radius:20px;
-    padding:40px 30px;
-    }
-    
-    
-    /* titolo card */
-    .card-custom h2{
-    color:var(--secondary);
-    font-size:1.6rem;
-    }
-    
-    
-    /* stats */
-    .stats{
-    display:flex;
-    justify-content:space-around;
-    background-color:var(--secondary);
-    border-radius:12px;
-    padding:15px;
-    margin-top:25px;
-    }
-    
-    .stats p{
-    margin:0;
+.nav-link:hover {
     color: var(--text);
-    }
-    
-    
-    /* bottone */
-.back-btn {
-    background-color: var(--primary);
-    border: none;
-    color: var(--text);
-    padding: 8px 25px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: 0.3s ease;
 }
 
-.back-btn:hover {
-    background-color: var(--hover);
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
 }
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-card {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Titolo pill */
+        .section-title {
+            background: var(--primary);
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+
+        /* CARD */
+        .card-custom {
+            background-color: var(--primary);
+            border: none;
+            border-radius: 20px;
+            padding: 40px 30px;
+        }
+
+        .card-custom h2 {
+            color: var(--secondary);
+            font-size: 1.6rem;
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--secondary);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 25px;
+        }
+
+        .stats p {
+            margin: 0;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .stats .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        /* Bottone indietro */
+        .back-btn {
+            background-color: var(--primary);
+            border: none;
+            color: var(--text);
+            padding: 9px 28px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: "Bruno Ace", sans-serif;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #a31621;
+            color: var(--text);
+        }
