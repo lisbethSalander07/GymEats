@@ -183,3 +183,58 @@ body {
             color: #a31621;
             gap: 12px;
         }
+
+        /* Card storico */
+        .storico-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 18px 24px;
+            border: 1px solid #2a2a2a;
+            transition: 0.25s ease;
+        }
+
+        .storico-card:hover {
+            background: #202020;
+            border-color: #3a3a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .storico-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .storico-card h6 {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .storico-date {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .storico-stat-value {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .storico-stat-label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .storico-stats { display: none !important; }
+        }
