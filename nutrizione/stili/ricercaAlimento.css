@@ -6,6 +6,7 @@
     --third: #1E1E1E;
     --text: #F4F2F8;
     --background: #0F0F0F;
+    --title: #8b111a;
 }
 
 /* FONT */
@@ -20,23 +21,24 @@ body {
     color: var(--text);
 }
 
-/* Cerchio in alto a sinistra */
+/* CERCHIO NUMERO ALIMENTI */
 .step-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--title);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: var(--text-muted);
+    color: var(--text);
 }
+
 
 /* Barra di ricerca */
 .search-wrapper {
-    background-color: #161616;
-    border: 1px solid #38040E; /* Bordo rosso scuro */
+    background-color: var(--secondary);
+    border: 1px solid var(--title);
     border-radius: 30px;
     height: 60px;
     overflow: hidden;
@@ -46,7 +48,7 @@ body {
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: var(--text);
     font-size: 1.2rem;
     z-index: 2;
 }
@@ -62,33 +64,30 @@ body {
     color: var(--text);
     outline: none;
     flex-grow: 1;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 /* Card singolo alimento */
 .food-item-card {
-    background-color: #1a1a1a;
+    background-color: var(--third);
     border-radius: 15px;
     padding: 20px;
     transition: 0.3s;
 }
 
-.food-item-card:hover {
-    background-color: #222;
+.mute{
+    color: var(--text-muted);
 }
 
-.food-item-card h5 {
-    font-size: 1.1rem;
-}
 
-/* Bottone di aggiunta '+' */
+/* tasto di aggiunta alimento */
 .btn-add {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #4a090e; /* Rosso scuro per lo sfondo */
+    background-color: var(--primary);
     border: 2px solid var(--primary);
-    color: var(--primary);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,16 +97,17 @@ body {
 }
 
 .btn-add:hover {
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--title);
+    border: 2px solid var(--title);
 }
 
-.small-kcal {
-    font-size: 0.85rem;
+.kcal {
+    font-size: 0.8rem;
+    margin-top: 5px;
     color: var(--text);
 }
 
-/* Bottone 'Fine' in basso */
+/* tasto fine */
 .btn-fine {
     background-color: var(--primary);
     color: var(--text);
@@ -120,5 +120,5 @@ body {
 }
 
 .btn-fine:hover {
-    background-color: #8b111a;
+    background-color: var(--title);
 }
