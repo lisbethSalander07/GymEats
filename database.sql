@@ -10,18 +10,11 @@ create table if not exists Atleta(
     altezza decimal(5,2) not null,
     peso decimal(5,2) not null,
     sesso boolean not null
-);
-
-create table if not exists Diario(
-    id int(5) PRIMARY key,
-    nome varchar(255) not null,
     ob_cal int(5) not null,
     ob_carbo int(5) not null,
     ob_proteine int(5) not null,
     ob_grassi int(5) not null,
     ob_peso int(5) not null,
-    idAtleta varchar(255) not null,
-    FOREIGN key (idAtleta) REFERENCES Atleta(email)
 );
 
 create table if not exists Giornata(
@@ -31,9 +24,8 @@ create table if not exists Giornata(
     carbo_tot int(5) not null,
     proteine_tot int(5) not null,
     grassi_tot int(5) not null,
-    acqua decimal(5,2) not null,
-    idDiario int(5) not null,
-    FOREIGN key (idDiario) REFERENCES Diario(id)
+    idAtleta int(5) not null,
+    FOREIGN key (idAtleta) REFERENCES Atleta(email)
 );
 
 create table if NOT exists Pasto(
