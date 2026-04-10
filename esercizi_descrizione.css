@@ -1,0 +1,182 @@
+:root {
+    --text-muted: #888;
+    --primary: #640D14;
+    --secondary: #121212;
+    --secondary-shade: #38040E;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
+    --background: #0F0F0F;
+}
+
+/* FONT */
+.bruno-ace-regular {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-right: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-card {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Card intestazione esercizio */
+        .exercise-header-card {
+            background: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 16px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+        }
+
+        .exercise-header-card h3 {
+            font-size: 1.4rem;
+            margin: 0 0 4px 0;
+            color: var(--text);
+        }
+
+        .exercise-header-card .muscle-primary {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin: 0 0 2px 0;
+        }
+
+        .exercise-header-card .muscle-secondary {
+            font-size: 0.78rem;
+            color: #888;
+            margin: 0;
+        }
+
+        /* Bottone + aggiungi */
+        .add-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            color: white;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: 0.25s;
+        }
+
+        .add-btn:hover {
+            background: #a31621;
+            transform: scale(1.08);
+        }
+
+        /* Immagine esercizio */
+        .exercise-image-box {
+            background: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 16px;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .exercise-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Placeholder immagine */
+        .img-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+            font-size: 0.8rem;
+        }
+
+        .img-placeholder i {
+            font-size: 3rem;
+            color: #333;
+        }
+
+        /* Descrizione */
+        .description-text {
+            font-size: 0.82rem;
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        /* Bottone indietro */
+        .back-btn {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 9px 28px;
+            border-radius: 20px;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .back-btn:hover {
+            background: #a31621;
+        }

@@ -1,10 +1,11 @@
 :root {
+    --text-muted: #888;
     --primary: #640D14;
     --secondary: #121212;
+    --secondary-shade: #38040E;
     --third: #1E1E1E;
     --text: #F4F2F8;
     --background: #0F0F0F;
-    --hover: #a31621;
 }
 
 /* FONT */
@@ -14,168 +15,172 @@
     font-style: normal;
 }
 
-/* BODY */
-body,
-html {
-    background-color: var(--background);
-    color: var(--text);
-    min-height: 100vh;
-
-}
-
-.container-fluid {
+body {
     background-color: var(--background);
     color: var(--text);
 }
 
-/* LOGO */
-.logo-img {
-    height: 100px;
-    width: auto;
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
 }
 
-/* HEADER NAV */
-.nav-pill {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.85rem;
-    padding: 7px 18px;
-    border-radius: 25px;
-    white-space: nowrap;
-    transition: 0.25s ease;
+.logo {
+    font-weight: 700;
 }
 
-.nav-pill:hover {
-    background-color: var(--third);
+.logo span {
+    color: var(--primary);
 }
 
-.nav-pill.active {
-    background-color: var(--primary);
-}
-
-/* Titolo */
-.section-title {
-    background: var(--primary);
-    display: inline-block;
-    padding: 10px 30px;
-    border-radius: 25px;
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
     font-size: 1rem;
+    border-right: 3px solid transparent;
 }
 
-/* Search Box */
-.search-box {
-    background: transparent;
-    border: 1px solid var(--primary);
-    border-radius: 30px;
-    padding: 8px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.nav-link:hover {
     color: var(--text);
-    font-size: 0.9rem;
 }
 
-.search-box input {
-    background: transparent;
-    border: none;
-    outline: none;
+.nav-link.active {
     color: var(--text);
-    width: 100%;
-    font-size: 0.85rem;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
 }
 
-/* Bottone ricerca */
-.search-btn {
-    background-color: var(--primary); 
-    border: none;
-    padding: 0 18px;
-    border-radius: 30px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
+.nav-link i {
+    margin-right: 10px;
 }
 
-.search-btn:hover {
-    background-color: var(--hover);
-    transform: scale(1.05);
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
 }
 
-
-/* Card esercizi */
-.exercise-card {
-    background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%);
-    border-radius: 20px;
-    padding: 20px 30px;
-    transition: 0.3s ease;
+.dashboard-card {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.exercise-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(123, 15, 23, 0.4);
-}
+/* ===== ESERCIZI ===== */
 
-.exercise-card h5 {
-    margin: 0;
-    font-size: 1rem;
-}
+        /* Titolo pill */
+        .section-title {
+            background: var(--primary);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
 
-.exercise-card small {
-    color: #aaa;
-}
+        /* Search Box */
+        .search-box {
+            background: transparent;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
 
-/* Freccia */
-.arrow-btn {
-    background-color: var(--primary);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            width: 100%;
+            font-size: 0.85rem;
+            font-family: "Bruno Ace", sans-serif;
+        }
 
-.arrow-btn:hover {
-    background-color: var(--hover);
-}
+        .search-box input::placeholder {
+            color: #555;
+        }
 
-.arrow-btn-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: var(--primary);
-    border: none;
-    color: var(--text);
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
-}
+        .search-btn {
+            background-color: var(--primary);
+            border: none;
+            padding: 0 18px;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
 
-/* Bottone indietro */
-.back-btn {
-    background-color: var(--primary);
-    border: none;
-    color: white;
-    padding: 8px 25px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: 0.3s ease;
-}
+        .search-btn:hover {
+            background-color: #a31621;
+            transform: scale(1.05);
+        }
 
-.back-btn:hover {
-    background-color: var(--hover);
-}
+        /* Card esercizi */
+        .exercise-card {
+            background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%);
+            border-radius: 20px;
+            padding: 20px 30px;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .exercise-card {
-        padding: 18px;
-    }
-}
+        .exercise-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(123, 15, 23, 0.4);
+        }
+
+        .exercise-card h5 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .exercise-card small {
+            color: #aaa;
+        }
+
+        /* Freccia */
+        .arrow-btn {
+            background-color: var(--primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+            flex-shrink: 0;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .arrow-btn:hover {
+            background-color: #a31621;
+        }
+
+        /* Bottone indietro */
+        .back-btn {
+            background-color: var(--primary);
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: "Bruno Ace", sans-serif;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #a31621;
+        }

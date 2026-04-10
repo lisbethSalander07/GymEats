@@ -1,0 +1,223 @@
+:root {
+    --text-muted: #888;
+    --primary: #640D14;
+    --secondary: #121212;
+    --secondary-shade: #38040E;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
+    --background: #0F0F0F;
+}
+
+/* FONT */
+.bruno-ace-regular {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* NAV BAR */
+.sidebar {
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-right: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-card {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Stats in cima */
+        .stats-bar {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .stat-item .stat-value {
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        /* Titolo pill */
+        .section-title {
+            background: var(--secondary);
+            display: inline-block;
+            padding: 10px 40px;
+            border-radius: 25px;
+            font-size: 1rem;
+            color: var(--text);
+            border: 1px solid #2a2a2a;
+            margin-bottom: 24px;
+        }
+
+        /* Box esercizio */
+        .exercise-box {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            border: 1px solid #2e2e2e;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .exercise-box .exercise-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        .exercise-box .exercise-title i {
+            color: var(--primary);
+        }
+
+        /* Tabella */
+        .custom-table {
+            color: var(--text);
+            width: 100%;
+        }
+
+        .custom-table th {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 400;
+            padding: 6px 10px;
+            text-align: center;
+        }
+
+        .custom-table td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+            color: var(--text);
+            background: transparent;
+        }
+
+        .custom-table tr {
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .custom-table tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Checkbox verde */
+        .check-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #1e3a2a;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 auto;
+            transition: 0.2s;
+            color: #22c55e;
+            font-size: 0.9rem;
+        }
+
+        .check-btn:hover {
+            background: #22c55e;
+            color: white;
+        }
+
+        .check-btn.checked {
+            background: #22c55e;
+            color: white;
+        }
+
+        /* Bottone aggiungi serie */
+        .add-series-btn {
+            background: transparent;
+            color: #888;
+            border: none;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 6px 0;
+            transition: 0.2s;
+            width: 100%;
+            text-align: center;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .add-series-btn:hover {
+            color: var(--text);
+        }
+
+        /* Bottone termina */
+        .termina-btn {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 14px 0;
+            border-radius: 16px;
+            width: 100%;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .termina-btn:hover {
+            background: #a31621;
+        }
