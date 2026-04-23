@@ -2,7 +2,7 @@
 // CONNESSIONE AL DATABASE
     function getConnection():PDO {
         $host="localhost";
-        $dbname="my_lindaSofia";
+        $dbname="my_gymeats";
         $dsn="mysql:host=$host;dbname=$dbname;charset=utf8";
         $user="root";
         $password="";

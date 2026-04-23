@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -78,13 +80,23 @@
                             </div>
                         </div>
 
-                        <input type="submit" name="invio" id="invio" value="Registrati">
+                        <input type="submit" name="registrati" id="invio" value="Registrati">
                     </form>
 
                     <a href="login.html" id="login">oppure <span>ACCEDI</span></a>
                 </div>
             </div>
         </div>
+
+        <!-- ERRORI INSERIMENTI -->
+        <div>
+			<?php
+				if(isset($_SESSION["errori"])){
+                    echo $_SESSION["errori"];
+                    unset($_SESSION['errori']);
+                }
+			?>
+		</div>
 
     </div>
 

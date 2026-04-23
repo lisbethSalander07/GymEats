@@ -1,3 +1,21 @@
+<?php 
+    session_start();
+
+    // log out
+    if (isset($_GET['logout'])) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+
+    // controllo autorizzazione
+    if (!isset($_SESSION["id"])) {
+        header("Location: login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -13,12 +31,6 @@
     <link rel="stylesheet" href="../stili/nutrizione.css">
 </head>
 
-<!-- 
-- non è responsive
-- bisogna integrare il calendario per la data selezionata
-- mettere delle ombre (+ tridimensionalità alle card dei macros e dei pasti)
--->
-
 <body>
 
     <div class="container-fluid bruno-ace-regular">
@@ -31,19 +43,19 @@
 
                     <ul class="nav flex-row flex-md-column justify-content-around w-100">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../profilo.html">
+                            <a class="nav-link" href="../../profilo.php">
                                 <i class="fa-solid fa-user"></i>
                                 <span class="d-none d-lg-inline">Profilo</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../allenamento/pagine/allenamento.html">
+                            <a class="nav-link" href="../../allenamento/pagine/allenamento.php">
                                 <i class="fa-solid fa-dumbbell"></i>
                                 <span class="d-none d-lg-inline">Allenamento</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="nutrizione.html">
+                            <a class="nav-link active" href="nutrizione.php">
                                 <i class="fa-solid fa-utensils"></i>
                                 <span class="d-none d-lg-inline">Nutrizione</span>
                             </a>
@@ -54,7 +66,7 @@
                     </ul>
 
                     <div class="mt-auto logout-container d-lg-block">
-                        <a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                        <a href="?logout=1" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                     </div>
                 </div>
             </nav>

@@ -3,7 +3,7 @@ require_once 'connessione.php';
 
 $pdo = getConnection();
 
-// controllo se esiste email
+// CONTROLLO EMAIL
 function controlloAtleta(PDO $pdo, $email)
 {
     $sql = "SELECT * FROM Atleta WHERE email = :email;";
@@ -15,5 +15,13 @@ function controlloAtleta(PDO $pdo, $email)
 
     return $atleta ?: null;
 }
+
+ // REGISTRAZIONE
+    function registrazione(PDO $pdo, $email, $password){
+        $sql = "INSERT INTO Atleta(email, password) VALUES(:email, :password);";
+
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([ "email" => $email, "password" => $password]);
+    }
 
 ?>

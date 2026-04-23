@@ -1,3 +1,21 @@
+<?php 
+    session_start();
+
+    // log out
+    if (isset($_GET['logout'])) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+
+    // controllo autorizzazione
+    if (!isset($_SESSION["id"])) {
+        header("Location: login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -17,28 +35,41 @@
     <div class="container-fluid bruno-ace-regular">
         <div class="row min-vh-100">
 
-            <!-- SIDEBAR -->
-            <nav class="col-md-2 d-none d-md-block sidebar py-4">
+        <!-- SIDEBAR -->
+            <nav class="col-lg-2 sidebar py-4">
                 <div class="sidebar-sticky">
-                    <h2 class="logo px-3 mb-5">Gym<span>Eats</span></h2>
+                    <h2 class="logo px-3 mb-5 d-none d-md-block">Gym<span>Eats</span></h2>
 
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-row flex-md-column justify-content-around w-100">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../profilo.html"><i class="fa-solid fa-user"></i> Profilo</a>
+                            <a class="nav-link" href="../../profilo.php">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="d-none d-lg-inline">Profilo</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="allenamento.html"><i class="fa-solid fa-dumbbell"></i> Allenamento</a>
+                            <a class="nav-link" href="allenamento.php">
+                                <i class="fa-solid fa-dumbbell"></i>
+                                <span class="d-none d-lg-inline">Allenamento</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../nutrizione/pagine/nutrizione.html"><i class="fa-solid fa-utensils"></i> Nutrizione</a>
+                            <a class="nav-link active" href="../../nutrizione/pagine/nutrizione.php">
+                                <i class="fa-solid fa-utensils"></i>
+                                <span class="d-none d-lg-inline">Nutrizione</span>
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                         </li>
                     </ul>
 
-                    <div class="mt-auto logout-container">
-                        <a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                    <div class="mt-auto logout-container d-lg-block">
+                        <a href="?logout=1" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                     </div>
                 </div>
             </nav>
+
 
             <!-- MAIN -->
             <main class="col-md-10 ms-sm-auto px-md-5 py-4 main-container">

@@ -28,30 +28,44 @@ html {
     color: var(--text);
 }
 
-/* LOGO */
-.logo-img {
-    height: 100px;
-    width: auto;
+/* SIDEBAR */
+.sidebar {
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: 1px solid #252525;
 }
 
-/* HEADER NAV */
-.nav-pill {
-    text-decoration: none;
+.logo {
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--text-muted);
+    padding: 15px 18px;
+    font-size: 1rem;
+    border-right: 3px solid transparent;
+}
+
+.nav-link:hover {
     color: var(--text);
-    font-size: 0.85rem;
-    padding: 7px 18px;
-    border-radius: 25px;
-    white-space: nowrap;
-    transition: 0.25s ease;
 }
 
-.nav-pill:hover {
-    background-color: var(--third);
+.nav-link.active {
+    color: var(--text);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    border-right: 3px solid var(--primary);
 }
 
-.nav-pill.active {
-    background-color: var(--primary);
+.nav-link i {
+    margin-right: 10px;
 }
+
 
 /* Pill titolo */
 .title-pill {

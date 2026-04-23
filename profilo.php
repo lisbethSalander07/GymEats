@@ -1,0 +1,289 @@
+<?php 
+    session_start();
+
+    // log out
+    if (isset($_GET['logout'])) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+
+    // controllo autorizzazione
+    if (!isset($_SESSION["id"])) {
+        header("Location: login.php");
+        exit();
+    }
+?>
+
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymEats - Profilo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Usa lo stesso CSS di nutrizione -->
+    <link rel="stylesheet" href="profilo.css">
+</head>
+
+<body>
+
+    <div class="d-flex gap-3">
+        <div class="container-fluid bruno-ace-regular">
+            <div class="row min-vh-100">
+
+                <!-- SIDEBAR -->
+                <nav class="col-md-2 d-none d-md-block sidebar py-4">
+                    <div class="sidebar-sticky">
+                        <h2 class="logo px-3 mb-5">Gym<span>Eats</span></h2>
+
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="profilo.html"><i class="fa-solid fa-user"></i>
+                                    Profilo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="allenamento/pagine/allenamento.html"><i class="fa-solid fa-dumbbell"></i>
+                                    Allenamento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nutrizione/pagine/nutrizione.html"><i class="fa-solid fa-utensils"></i>
+                                    Nutrizione</a>
+                            </li>
+                        </ul>
+
+                        <div class="mt-auto logout-container">
+                            <a href="?logout=1" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- MAIN -->
+                <main class="col-md-10 ms-sm-auto px-md-5 py-4 main-container">
+                    <div class="dashboard-card p-4">
+
+                        <!-- HEADER PROFILO -->
+                        <div class="profile-header">
+                            <div class="avatar">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Nome Cognome</h4>
+                                <p class="mb-0" style="color:#888; font-size:0.85rem;">Membro dal 2024</p>
+                            </div>
+                        </div>
+
+                        <hr class="profile-divider">
+
+                        <div class="row g-4">
+
+                            <!-- DATI PERSONALI -->
+                            <div class="col-lg-8">
+                                <p class="section-label">Dati personali</p>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Nome</div>
+                                    <input type="text" class="profile-input" placeholder="—" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Cognome</div>
+                                    <input type="text" class="profile-input" placeholder="—" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Sesso</div>
+                                    <input type="text" class="profile-input" placeholder="—" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Peso (kg)</div>
+                                    <input type="text" class="profile-input" placeholder="—" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Altezza (cm)</div>
+                                    <input type="text" class="profile-input" placeholder="—" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+
+                                <div class="profile-row">
+                                    <div class="profile-label">Data di nascita</div>
+                                    <input type="date" class="profile-input" disabled>
+                                    <button class="edit-icon" title="Modifica"><i class="fa-solid fa-pen"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- AZIONI ACCOUNT -->
+                            <div class="col-lg-4">
+                                <p class="section-label">Account</p>
+                                <div class="d-flex flex-column gap-3">
+                                    <button class="profile-btn">
+                                        <i class="fa-solid fa-envelope"></i> Modifica email
+                                    </button>
+                                    <button class="profile-btn">
+                                        <i class="fa-solid fa-lock"></i> Modifica password
+                                    </button>
+                                    <button class="profile-btn">
+                                        <i class="fa-solid fa-sliders"></i> Obiettivi calorici
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="profile-divider mt-5">
+
+                        <!-- CALENDARIO ALLENAMENTI -->
+                        <div class="mb-5">
+                            <p class="section-label">Calendario allenamenti</p>
+                            <div class="calendar-card">
+                                <div class="calendar-header-row">
+                                    <button class="calendar-nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <span class="calendar-month">Aprile 2026</span>
+                                    <button class="calendar-nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+
+                                <div class="calendar-weekdays">
+                                    <div class="cal-weekday">LUN</div>
+                                    <div class="cal-weekday">MAR</div>
+                                    <div class="cal-weekday">MER</div>
+                                    <div class="cal-weekday">GIO</div>
+                                    <div class="cal-weekday">VEN</div>
+                                    <div class="cal-weekday">SAB</div>
+                                    <div class="cal-weekday">DOM</div>
+                                </div>
+
+                                <div class="calendar-grid">
+                                    <!-- Aprile 2026 inizia di mercoledì → 2 celle vuote -->
+                                    <div class="day empty"></div>
+                                    <div class="day empty"></div>
+                                    <div class="day">1</div>
+                                    <div class="day active-green">2</div>
+                                    <div class="day active-green">3</div>
+                                    <div class="day">4</div>
+                                    <div class="day">5</div>
+
+                                    <div class="day active-green">6</div>
+                                    <div class="day">7</div>
+                                    <div class="day active-green">8</div>
+                                    <div class="day">9</div>
+                                    <div class="day active-green">10</div>
+                                    <div class="day">11</div>
+                                    <div class="day">12</div>
+
+                                    <div class="day active-green">13</div>
+                                    <div class="day">14</div>
+                                    <div class="day active-green">15</div>
+                                    <div class="day">16</div>
+                                    <div class="day active-green">17</div>
+                                    <div class="day">18</div>
+                                    <div class="day">19</div>
+
+                                    <div class="day active-green">20</div>
+                                    <div class="day">21</div>
+                                    <div class="day active-green">22</div>
+                                    <div class="day">23</div>
+                                    <div class="day active-green">24</div>
+                                    <div class="day">25</div>
+                                    <div class="day">26</div>
+
+                                    <div class="day active-green">27</div>
+                                    <div class="day">28</div>
+                                    <div class="day active-green">29</div>
+                                    <div class="day today">30</div>
+                                </div>
+
+                                <div class="calendar-legend">
+                                    <span><span class="legend-dot" style="background:#22c55e;"></span>Allenamento
+                                        svolto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CALENDARIO ALIMENTARE -->
+                        <div>
+                            <p class="section-label">Calendario alimentare</p>
+                            <div class="calendar-card">
+                                <div class="calendar-header-row">
+                                    <button class="calendar-nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <span class="calendar-month">Aprile 2026</span>
+                                    <button class="calendar-nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+
+                                <div class="calendar-weekdays">
+                                    <div class="cal-weekday">LUN</div>
+                                    <div class="cal-weekday">MAR</div>
+                                    <div class="cal-weekday">MER</div>
+                                    <div class="cal-weekday">GIO</div>
+                                    <div class="cal-weekday">VEN</div>
+                                    <div class="cal-weekday">SAB</div>
+                                    <div class="cal-weekday">DOM</div>
+                                </div>
+
+                                <div class="calendar-grid">
+                                    <div class="day empty"></div>
+                                    <div class="day empty"></div>
+                                    <div class="day active-green">1</div>
+                                    <div class="day active-green">2</div>
+                                    <div class="day active-green">3</div>
+                                    <div class="day active-red">4</div>
+                                    <div class="day">5</div>
+
+                                    <div class="day active-green">6</div>
+                                    <div class="day active-green">7</div>
+                                    <div class="day active-green">8</div>
+                                    <div class="day active-green">9</div>
+                                    <div class="day active-red">10</div>
+                                    <div class="day">11</div>
+                                    <div class="day">12</div>
+
+                                    <div class="day active-green">13</div>
+                                    <div class="day active-green">14</div>
+                                    <div class="day active-green">15</div>
+                                    <div class="day active-green">16</div>
+                                    <div class="day active-green">17</div>
+                                    <div class="day">18</div>
+                                    <div class="day">19</div>
+
+                                    <div class="day active-green">20</div>
+                                    <div class="day active-green">21</div>
+                                    <div class="day active-green">22</div>
+                                    <div class="day active-red">23</div>
+                                    <div class="day active-green">24</div>
+                                    <div class="day">25</div>
+                                    <div class="day">26</div>
+
+                                    <div class="day active-green">27</div>
+                                    <div class="day active-green">28</div>
+                                    <div class="day active-green">29</div>
+                                    <div class="day today">30</div>
+                                </div>
+
+                                <div class="calendar-legend">
+                                    <span><span class="legend-dot" style="background:#22c55e;"></span>Obiettivo
+                                        raggiunto</span>
+                                    <span><span class="legend-dot" style="background:#ef4444;"></span>Obiettivo
+                                        mancato</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
