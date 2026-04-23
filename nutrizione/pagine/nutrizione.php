@@ -60,9 +60,6 @@
                                 <span class="d-none d-lg-inline">Nutrizione</span>
                             </a>
                         </li>
-                        <li class="nav-item d-lg-none">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-                        </li>
                     </ul>
 
                     <div class="mt-auto logout-container d-lg-block">
