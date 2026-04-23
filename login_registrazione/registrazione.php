@@ -83,7 +83,7 @@
                         <input type="submit" name="registrati" id="invio" value="Registrati">
                     </form>
 
-                    <a href="login.html" id="login">oppure <span>ACCEDI</span></a>
+                    <a href="login.php" id="login">oppure <span>ACCEDI</span></a>
                 </div>
             </div>
         </div>

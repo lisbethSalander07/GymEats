@@ -49,7 +49,7 @@
                         <input type="submit" name="accedi" id="invio" value="Accedi">
                     </form>
 
-                    <a href="registrazione.html" id="registrazione">oppure <span>REGISTRATI</span></a>
+                    <a href="registrazione.php" id="registrazione">oppure <span>REGISTRATI</span></a>
                 </div>
             </div>
         </div>
