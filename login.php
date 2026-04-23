@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -17,29 +19,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-
-<!-- TO DO:
-- mettere logo
-- php per login 
-- collegamento alla pagina di registrazione
--->
-
 <body>
 
     <!-- container -->
     <div class="container-fluid bruno-ace-regular">
-
-        <!-- logo -->
-        <div class="row mb-2">
-            <div class="col-auto">
-                <img src="GymEats-logo.png" alt="logo" class="logo-img">
-            </div>
-        </div>
-
         <!-- box login -->
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4 my-5">
                 <div id="form-container">
+                    <h2 class="logo">Gym<span>Eats</span></h2>
                     <h3>Accedi al tuo account</h3>
 
                     <form action="" method="post">
@@ -65,6 +53,16 @@
                 </div>
             </div>
         </div>
+
+        <!-- ERRORI CREDENZIALI -->
+        <div>
+			<?php
+				if(isset($_SESSION["errori"])){
+                    echo $_SESSION["errori"];
+                    unset($_SESSION['errori']);
+                }
+			?>
+		</div>
 
     </div>
 

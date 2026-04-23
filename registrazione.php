@@ -18,25 +18,15 @@
 </head>
 
 
-<!-- TO DO:
--->
-
 <body>
 
     <!-- container -->
     <div class="container-fluid bruno-ace-regular">
-        <!-- logo -->
-        <div class="row mb-2">
-            <div class="col-auto">
-                <img src="GymEats-logo.png" alt="logo" class="logo-img">
-            </div>
-        </div>
-
-
         <!-- box registrazione -->
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
                 <div id="form-container">
+                    <h2 class="logo">Gym<span>Eats</span></h2>
                     <h3>Crea il tuo account</h3>
 
                     <form action="" method="post">
@@ -63,7 +53,7 @@
                             </div>
                             <div class="col-6 col-sm-5 col-md-2">
                                 <label for="altezza">Altezza:</label>
-                                <input type="text"placeholder="cm" name="altezza" class="form-control">
+                                <input type="text" placeholder="cm" name="altezza" class="form-control">
                             </div>
                             <div class="col-6 col-sm-5 col-md-2">
                                 <label for="sesso">Sesso:</label>

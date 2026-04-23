@@ -1,8 +1,10 @@
 :root {
-    --primary-color: #640D14;
-    --secondary-color: #121212;
-    --third-color: #1E1E1E;
-    --text-color: #F4F2F8;
+    --text-muted: #888;
+    --primary: #640D14;
+    --secondary: #121212;
+    --secondary-shade: #38040E;
+    --third: #1E1E1E;
+    --text: #F4F2F8;
     --background: #0F0F0F;
 }
 
@@ -14,9 +16,13 @@
 }
 
 /* LOGO */
-.logo-img {
-    height: 48px;
-    width: auto;
+.logo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo span {
+    color: var(--primary);
 }
 
 /* BODY */
@@ -24,14 +30,18 @@
 .container-fluid {
     height: 100vh;
     background-color: var(--background);
-    color: var(--text-color);
+    color: var(--text);
     overflow: auto;
 }
 
 /* FORM */
 
 #form-container {
-    background-color: var(--secondary-color);
+    margin-top: 50px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.4), 
+                -1px -1px 5px rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
+    background-color: var(--secondary);
     border-radius: 25px;
     padding: 40px;
 }
@@ -41,19 +51,19 @@
 input.form-control,
 select.form-select,
 input[type="date"].form-control {
-    background-color: var(--third-color);
+    background-color: var(--third);
     border-radius: 25px;
     border: none;
     font-size: 1rem;
     padding: 10px 20px;
-    color: var(--text-color);
+    color: var(--text);
 }
 
 input.form-control:focus,
 select.form-select:focus {
-    background-color: var(--third-color);
-    color: var(--text-color);
-    box-shadow: 0 0 0 2px var(--primary-color);
+    background-color: var(--third);
+    color: var(--text);
+    box-shadow: 0 0 0 2px var(--primary);
     border: none;
     outline: none;
 }
@@ -70,19 +80,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 ::placeholder {
-    color: #9E9AAD;
-    opacity: 1;
+    color: var(--text-muted);
 }
 
 /* opzioni */
 select.form-select option {
-    background-color: var(--third-color);
-    color: var(--text-color);
+    background-color: var(--third);
+    color: var(--text);
 }
 
 /* TITOLO */
 #form-container h3 {
-    color: var(--primary-color);
+    color: var(--primary);
     text-align: center;
     font-size: clamp(1.4rem, 4vw, 2.2rem);
     margin-bottom: 20px;
@@ -90,10 +99,10 @@ select.form-select option {
 
 /* SUBMIT */
 #invio {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     border: none;
     border-radius: 25px;
-    color: var(--text-color);
+    color: var(--text);
     font-family: "Bruno Ace", sans-serif;
     font-size: 1rem;
     padding: 10px 32px;
@@ -110,13 +119,13 @@ select.form-select option {
     display: block;
     text-align: center;
     margin-top: 30px;
-    color: var(--text-color);
+    color: var(--text);
     font-size: 0.85rem;
     text-decoration: none;
 }
 
 #login span:hover {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 /* RESPONSIVE */
